@@ -2,10 +2,10 @@
   "name": "node-practice",
   "version": "1.0.0",
   "description": "",
-  "main": "src/server.js",
+  "main": "src/Project-01/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/server.js"
+    "start": "node src/Project-01/index.js"
   },
   "keywords": [],
   "author": "",
