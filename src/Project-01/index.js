@@ -2,6 +2,24 @@ const express = require("express");
 const app = express();
 const PORT = 8000;
 const users = require("./MOCK_DATA.json");
+const mongoose = require("mongoose");
+
+// Step 1: Create schema
+const userSchema = new mongoose.Schema({
+  first_name: { type: String, required: true },
+  last_name: { type: String },
+  email: { type: String, required: true, unique: true },
+  gender: { type: String },
+});
+
+// Step 2: Create model
+const User = mongoose.model("user", userSchema);
+
+// Step 3: Connect Mongoose
+mongoose
+  .connect("mongodb://127.0.0.1:27017/myUser")
+  .then(() => console.log("MongoDB connected successfully!"))
+  .catch((err) => console.error("MongoDB connection error:", err));
 
 //Start server
 app.listen(PORT, () => {
